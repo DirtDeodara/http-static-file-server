@@ -11,4 +11,13 @@ describe('tests', () => {
       });
   });
 
+  it('retuns the content of harvey.html', () => {
+    return request(app)
+      .get('/harvey.html')
+      .then(res => {
+        expect(res.status).toEqual(200);
+        expect(res.text).toEqual(expect.stringContaining('page'));
+      });
+  });
+
 });
